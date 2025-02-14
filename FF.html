@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual personagem da Sanrio você é? 🎀</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            background-color: #ffe4f2;
+            color: #5a189a;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        h2 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ff69b4;
+        }
+        select, button {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 80%;
+            max-width: 400px;
+        }
+        select {
+            background: #fcd4ff;
+            color: #5a189a;
+        }
+        button {
+            background: #ff69b4;
+            color: white;
+            margin-top: 20px;
+            width: 50%;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Descubra qual personagem da Sanrio você é! 🎀</h2>
+        
+        <label>1️⃣ Qual é o seu lanche favorito? </label>
+        <select id="food">
+            <option value="doces">Doces 🍰</option>
+            <option value="salgados">Salgados 🍕</option>
+            <option value="sorvete">Sorvete 🍦</option>
+        </select>
+        
+        <label>2️⃣ O que você prefere fazer no tempo livre? </label>
+        <select id="hobby">
+            <option value="dormir">Dormir 😴</option>
+            <option value="socializar">Ficar com amigos 💖</option>
+            <option value="aventura">Aventuras 🌟</option>
+        </select>
+
+        <label>3️⃣ Como você se sente geralmente? </label>
+        <select id="mood">
+            <option value="fofa">Fofa e tranquila 🥰</option>
+            <option value="caos">Caótica e engraçada 😈</option>
+            <option value="seria">Séria e confiável 🤨</option>
+        </select>
+
+        <label>4️⃣ Qual cor te representa mais? </label>
+        <select id="color">
+            <option value="rosa">Rosa 💖</option>
+            <option value="preto">Preto 🖤</option>
+            <option value="amarelo">Amarelo 💛</option>
+            <option value="azul">Azul 💙</option>
+        </select>
+
+        <label>5️⃣ Qual poder você gostaria de ter? </label>
+        <select id="power">
+            <option value="voar">Voar 🦋</option>
+            <option value="invisibilidade">Ficar invisível 👻</option>
+            <option value="força">Força extraordinária 💪</option>
+            <option value="curar">Curar pessoas 💖</option>
+        </select>
+
+        <label>6️⃣ Qual é o seu animal favorito? </label>
+        <select id="animal">
+            <option value="gato">Gato 🐱</option>
+            <option value="cachorro">Cachorro 🐶</option>
+            <option value="coelho">Coelho 🐰</option>
+            <option value="pássaro">Pássaro 🦜</option>
+        </select>
+
+        <label>7️⃣ Como você reage quando está nervosa? </label>
+        <select id="reaction">
+            <option value="calma">Fico calma e tento resolver 😊</option>
+            <option value="rebelde">Fico um pouco rebelde 😜</option>
+            <option value="quieta">Fico bem quietinha e sumo 🧘‍♀️</option>
+            <option value="agitada">Fico muito agitada e falante 😅</option>
+        </select>
+
+        <label>8️⃣ Qual estilo de roupa você mais gosta? </label>
+        <select id="style">
+            <option value="fofo">Roupas fofas e confortáveis 🌸</option>
+            <option value="rock">Roupas mais dark e descoladas 😈</option>
+            <option value="clássico">Roupas elegantes e clássicas 🎩</option>
+            <option value="relax">Roupas casuais e práticas 👚</option>
+        </select>
+
+        <button onclick="descobrirPersonagem()">Descobrir! 💖</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function descobrirPersonagem() {
+            let food = document.getElementById("food").value;
+            let hobby = document.getElementById("hobby").value;
+            let mood = document.getElementById("mood").value;
+            let color = document.getElementById("color").value;
+            let power = document.getElementById("power").value;
+            let animal = document.getElementById("animal").value;
+            let reaction = document.getElementById("reaction").value;
+            let style = document.getElementById("style").value;
+            let resultado = "";
+
+            // Definindo personagem com base nas respostas
+            if (food === "doces" && mood === "fofa" && color === "rosa") {
+                resultado = "🎀 Você é a Hello Kitty! Sempre fofa e cheia de carinho! 💖";
+            } else if (food === "salgados" && hobby === "dormir" && style === "relax") {
+                resultado = "🍮 Você é o Pompompurin! Adora relaxar e comer! 😴";
+            } else if (food === "sorvete" && animal === "coelho" && power === "voar") {
+                resultado = "☁️ Você é o Cinnamoroll! Sempre sonhando e voando por aí! ✨";
+            } else if (mood === "caos" && reaction === "rebelde" && style === "rock") {
+                resultado = "😈 Você é a Kuromi! Rebeldia e diversão são o seu lema! 😜";
+            } else if (food === "sorvete" && mood === "seria" && color === "azul") {
+                resultado = "🌸 Você é a My Melody! Tranquila e confiável! 🥰";
+            } else {
+                resultado = "💖 Você é o personagem mais incrível da Sanrio! 😎";
+            }
+
+            document.getElementById("result").innerText = resultado;
+        }
+    </script>
+</body>
+</html>
